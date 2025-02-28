@@ -11,7 +11,7 @@ spring:
 
 ## Configuracion de Instancia 
 server:
-  port: 8096
+  port: ${PORT:8096}
   fullAddress: ${HOST:http://localhost}:${PORT:${server.port}}
 
 ## Configuracion del cliente de Eureka
