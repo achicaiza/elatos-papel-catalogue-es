@@ -21,7 +21,7 @@ eureka:
       defaultZone: ${EUREKA_URL:http://localhost:8762/eureka}
   instance:
     preferIpAddress: false
-    hostname: ms-books-catalogue-elasticsearch
+    hostname: ${HOSTNAME:ms-books-catalogue-elasticsearch}
     non-secure-port-enabled: false
     secure-port-enabled: true
     non-secure-port: 80
