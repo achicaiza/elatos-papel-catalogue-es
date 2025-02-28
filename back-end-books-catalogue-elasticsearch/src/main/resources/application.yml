@@ -1,0 +1,38 @@
+## Configuracion de Spring
+spring:
+  application:
+    name: ms-books-catalogue-elasticsearch
+  web:
+    cors:
+      allowed-origins: "*"
+      allowed-methods: "*"
+      allowed-headers: "*"
+      allow-credentials: false
+
+## Configuracion de Instancia 
+server:
+  port: 8096
+  fullAddress: ${HOST:http://localhost}:${PORT:${server.port}}
+
+## Configuracion del cliente de Eureka
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URL:http://localhost:8762/eureka}
+  instance:
+    preferIpAddress: false
+    hostname: ms-books-catalogue-elasticsearch
+    non-secure-port-enabled: false
+    secure-port-enabled: true
+    non-secure-port: 80
+    secure-port: 443
+
+##Elasticsearch config
+elasticsearch:
+  host: ${ELASTICSEARCH_HOST}
+  credentials:
+    user: ${ELASTICSEARCH_USER}
+    password: ${ELASTICSEARCH_PWD}
+logging:
+  level:
+    tracer: TRACE
